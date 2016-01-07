@@ -12,7 +12,7 @@ UITextField,UITextView keyboard auto hidden and view auto moving
   为当视图遮挡时其父视图往上移动，并且默认的偏移量是50.
   您也可以实现自定义视图的键盘遮挡和移动机制，具体参考类定义头文件中的描述。
   如果您要在UITableViewCell中使用UITextField,UITextView的话，请将UITextField和UITextView的.kbMoving.kbMovingView = tableView
-  
+ 
   
   
   
