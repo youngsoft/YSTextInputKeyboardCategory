@@ -21,7 +21,7 @@
     // Override point for customization after application launch.
     
     //您可以在这里当键盘遮挡时的默认偏移值
-    [YSKeyboardMoving appearance].offset = 20;
+    [YSKeyboardMoving appearance].offset = 50;
     
     return YES;
 }
