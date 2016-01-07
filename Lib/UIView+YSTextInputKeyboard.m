@@ -1,9 +1,9 @@
 //
-//  JMSBaseView.m
-//  jimustock
+//  UIView+YSTextInputKeyboard.m
+//  YSTextInputKeyboardCategory
 //
-//  Created by jimubox on 15/5/12.
-//  Copyright (c) 2015年 jimubox. All rights reserved.
+//  Created by apple on 15/5/12.
+//  Copyright (c) 2015年 youngsoft. All rights reserved.
 //
 
 #import "UIView+YSTextInputKeyboard.h"
