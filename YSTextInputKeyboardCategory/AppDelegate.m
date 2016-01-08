@@ -20,8 +20,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    //您可以在这里当键盘遮挡时的默认偏移值
-    [YSKeyboardMoving appearance].offset = 50;
+    //您可以统一设置键盘遮挡时的默认偏移值
+    [YSKeyboardMoving appearance].offset = 40;
     
     return YES;
 }

@@ -11,7 +11,7 @@
 
 /*
  键盘弹出取消自动移动类。
-    本扩展默认实现了UITextField,UITextView的键盘弹出机制,要想访问这个类的实例则可以使用UIView的分类中定义的扩展属性：kbMoving。
+    本扩展默认实现了UITextField,UITextView,UISearchBar的键盘弹出机制,要想访问这个类的实例则可以使用UIView的分类中定义的扩展属性：kbMoving。
  一般情况下用户不需要任何编码就可以实现键盘的自动弹出。
  */
 @interface YSKeyboardMoving : NSObject<UIAppearance>
