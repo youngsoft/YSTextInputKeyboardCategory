@@ -27,7 +27,6 @@ GYS_LPFNFirstResponder GYS_defaultSearchBarBecomeFirstResponder = NULL;
 GYS_LPFNFirstResponder GYS_defaultSearchBarResignFirstResponder = NULL;
 
 GYS_LPFNDidMoveToSuperview GYS_defaultViewDidMoveToSuperview = NULL;
-GYS_LPFNDidMoveToSuperview GYS_defaultSearchBarDidMoveToSuperview = NULL;
 
 
 BOOL YSTextFieldBecomeFirstResponder(UIView *self, SEL _cmd)
@@ -98,16 +97,6 @@ void YSViewDidMoveToSuperview(UIView *self, SEL _cmd)
     {
         if (![self isKindOfClass:NSClassFromString(@"UISearchBarTextField")])
             self.kbMoving.kbMovingView = self.superview;
-    }
-}
-
-void YSSearchBarDidMoveToSuperview(UIView *self, SEL _cmd)
-{
-    GYS_defaultSearchBarDidMoveToSuperview(self, _cmd);
-    
-    if (self.kbMoving.kbMovingView == nil)
-    {
-        self.kbMoving.kbMovingView = self.superview;
     }
 }
 
@@ -398,9 +387,6 @@ void YSSearchBarDidMoveToSuperview(UIView *self, SEL _cmd)
     GYS_defaultTextViewBecomeFirstResponder = (GYS_LPFNFirstResponder)class_replaceMethod([UITextView class], @selector(becomeFirstResponder), (IMP)&YSTextViewBecomeFirstResponder, "@:");
     GYS_defaultTextViewResignFirstResponder = (GYS_LPFNFirstResponder)class_replaceMethod([UITextView class], @selector(resignFirstResponder), (IMP)&YSTextViewResignFirstResponder, "@:");
     
-    
-     GYS_defaultSearchBarDidMoveToSuperview = (GYS_LPFNDidMoveToSuperview)class_replaceMethod([UISearchBar class], @selector(didMoveToSuperview), (IMP)&YSSearchBarDidMoveToSuperview, "@:");
-    
     GYS_defaultViewDidMoveToSuperview = (GYS_LPFNDidMoveToSuperview)class_replaceMethod([UIView class], @selector(didMoveToSuperview), (IMP)&YSViewDidMoveToSuperview, "@:");
     
     
@@ -425,14 +411,6 @@ void YSSearchBarDidMoveToSuperview(UIView *self, SEL _cmd)
 
 -(YSKeyboardMoving*)kbMoving
 {
-    //校验是否是UISearchBar，如果是U
-    if ([self isKindOfClass:[UISearchBar class]])
-    {
-        UITextField *txtv = [self findSearchBarTextField];
-        if (txtv != nil)
-            return [txtv kbMoving];
-    }
-    
     YSKeyboardMoving *kbMoving = objc_getAssociatedObject(self, ASSOCIATEDOBJECT_KEY_YSTEXTINPUTKEYBOARD_MOVING);
     if (kbMoving == nil)
     {
