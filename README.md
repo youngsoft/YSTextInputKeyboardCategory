@@ -1,9 +1,9 @@
 # YSTextInputKeyboardCategory
 
-UITextField,UITextView,UISearchBar keyboard auto hidden and view auto moving offset。You need not write any code, just add UIView+YSTextInputKeyboard.h and UIView+YSTextInputKeyboard.m in project。
+UITextField,UITextView keyboard auto hidden and view auto moving offset。You need not write any code, just add UIView+YSTextInputKeyboard.h and UIView+YSTextInputKeyboard.m in project。
 
 ## Overview
-  众所周知，iOS的UITextField,UITextView,UISearchBar这三个控件在获得焦点时键盘会弹出，并且当这两个控件在屏幕的下方时有可能键盘会遮挡住视图，因此我们要
+  众所周知，iOS的UITextField,UITextView这两个控件在获得焦点时键盘会弹出，并且当这两个控件在屏幕的下方时有可能键盘会遮挡住视图，因此我们要
   负责编码让控件失去焦点后键盘隐藏，以及让视图进行一定范围的移动。有了YSTextInputKeyboardCategory这个UIView的分类后，这两个控件的键盘
   隐藏和自动移动功能都不再需要编码了。！！！你唯一要做的就是把UIView+YSTextInputKeyboard.h和UIView+YSTextInputKeyboard.m这两个文件加入到你的
   工程中，什么也不要做。问题解决！！！
