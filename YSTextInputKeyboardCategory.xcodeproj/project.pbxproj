@@ -363,10 +363,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Le Rong Duo Yuan Information Technology Co., Ltd.";
 				INFOPLIST_FILE = YSTextInputKeyboardCategory/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "045a085a-bca1-4873-8f6f-0890ebce7583";
 			};
 			name = Debug;
 		};
@@ -374,10 +376,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Le Rong Duo Yuan Information Technology Co., Ltd.";
 				INFOPLIST_FILE = YSTextInputKeyboardCategory/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "045a085a-bca1-4873-8f6f-0890ebce7583";
 			};
 			name = Release;
 		};
@@ -434,6 +438,7 @@
 				189AA69B1C3E1325002703DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		189AA69C1C3E1325002703DD /* Build configuration list for PBXNativeTarget "YSTextInputKeyboardCategoryTests" */ = {
 			isa = XCConfigurationList;
@@ -442,6 +447,7 @@
 				189AA69E1C3E1325002703DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

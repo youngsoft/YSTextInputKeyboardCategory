@@ -93,7 +93,7 @@ void YSViewDidMoveToSuperview(UIView *self, SEL _cmd)
     
     if (([self isKindOfClass:[UITextField class]] ||
          [self isKindOfClass:[UITextView class]] ||
-         [self methodForSelector:@selector(setInputView:)] != nil) && self.kbMoving.kbMovingView == nil)
+         [self.class instancesRespondToSelector:@selector(setInputView:)]) && self.kbMoving.kbMovingView == nil)
     {
         if (![self isKindOfClass:NSClassFromString(@"UISearchBarTextField")])
             self.kbMoving.kbMovingView = self.superview;
