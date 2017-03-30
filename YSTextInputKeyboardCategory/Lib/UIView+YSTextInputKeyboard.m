@@ -299,10 +299,20 @@ void YSViewDidMoveToSuperview(UIView *self, SEL _cmd)
         if (windowTemp != nil && !windowTemp.isHidden)
         {
             
-            //总是按252的高度来算。
             if (windowTemp.subviews.count > 0)
             {
-                [self movingView:252];
+                NSInteger height = 252; //默认按252来算。
+                if (self.txtView.inputView != nil)
+                {
+                    height = CGRectGetHeight(self.txtView.inputView.bounds);
+                    if (self.txtView.inputAccessoryView != nil)
+                    {
+                        height += CGRectGetHeight(self.txtView.inputAccessoryView.bounds);
+                    }
+                    else
+                        height += 36;
+                }
+                [self movingView:height];
             }
         }
     }
