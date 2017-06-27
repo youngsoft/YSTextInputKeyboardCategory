@@ -11,6 +11,7 @@
 
 
 const char * const ASSOCIATEDOBJECT_KEY_YSTEXTINPUTKEYBOARD_MOVING = "ASSOCIATEDOBJECT_KEY_YSTEXTINPUTKEYBOARD_MOVING";
+const char * const ASSOCIATEDOBJECT_KEY_YSTEXTINPUTKEYBOARD_HEIGHT = "ASSOCIATEDOBJECT_KEY_YSTEXTINPUTKEYBOARD_HEIGHT";
 
 
 typedef BOOL (*GYS_LPFNFirstResponder)(id,SEL);
@@ -200,7 +201,7 @@ void YSViewDidMoveToSuperview(UIView *self, SEL _cmd)
         NSDictionary *userInfo = [noti userInfo];
         NSValue *aValue = [userInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
         CGFloat keyboardHeight = [aValue CGRectValue].size.height;
-        
+        self.kbMovingView.keyBoardHeight = keyboardHeight;
         [self movingView:keyboardHeight];
     }
     
@@ -311,6 +312,9 @@ void YSViewDidMoveToSuperview(UIView *self, SEL _cmd)
                     }
                     else
                         height += 36;
+                }else
+                if (self.kbMovingView.keyBoardHeight > 0) {
+                    height = self.kbMovingView.keyBoardHeight;
                 }
                 [self movingView:height];
             }
@@ -429,6 +433,17 @@ void YSViewDidMoveToSuperview(UIView *self, SEL _cmd)
     }
     
     return kbMoving;
+}
+
+-(CGFloat)keyBoardHeight
+{
+    CGFloat height = [objc_getAssociatedObject(self, ASSOCIATEDOBJECT_KEY_YSTEXTINPUTKEYBOARD_HEIGHT) floatValue];
+    return height > 0 ? height : 0;
+}
+
+- (void)setKeyBoardHeight:(CGFloat)height
+{
+    objc_setAssociatedObject(self, ASSOCIATEDOBJECT_KEY_YSTEXTINPUTKEYBOARD_HEIGHT, [NSNumber numberWithFloat:height], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end
