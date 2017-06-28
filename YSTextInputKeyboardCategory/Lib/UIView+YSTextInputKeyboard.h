@@ -65,5 +65,6 @@
 
 //当具有输入焦点的控件在获取输入焦点弹出键盘以及失去焦点隐藏键盘时可以通过这个扩展属性来指定要往上偏移的视图以及偏移量
 @property(nonatomic, strong, readonly) YSKeyboardMoving *kbMoving;
+@property(nonatomic,assign) CGFloat keyBoardHeight;
 
 @end
